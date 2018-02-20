@@ -1,28 +1,30 @@
+// "let" es una sentencia que declara una variable a nivel local.
+// "const" puede ser tanto local como global, pero su valor nunca cambia y no se puede volver a reedeclarar.
+// se declara una variable global que guardará un array de numbers.
 var array = [1, 2, 3, 4, 5];
 
 // Ejercicio 1: simulando forEach();
-function miForEach(arreglo, callback){
+function myForEach(arreglo, callback) { // se declara la función con los parámetros "arreglo" y "callback"
     // completa aqui
-    callback(arreglo);
+    for (let index = 0; index < arreglo.length; index++) {
+        const element = arreglo[index];
+        callback(element);
+    }
 }
 
-miForEach(array, function(travelArray){
-    for (let index = 0; index < travelArray.length; index++) {
-        const element = travelArray[index];
-        console.log(element);        
-    }
+myForEach(array, function(travelArray){   
+        console.log(travelArray);        
 })
 
 // Ejercicio 2: simulando map();
 var saveArray = [];
-function mapArray(arreglo, callback){
+function mapArray(arreglo, callback) {
     callback(arreglo);
 }
 
 function myMapArray(arreglo) {
     for (let index = 0; index < arreglo.length; index++) {
-        const element = arreglo[index];
-        saveArray.push(element);        
+        saveArray[index] = arreglo[index] + 5;        
     }
     console.log(saveArray);
     return saveArray;
