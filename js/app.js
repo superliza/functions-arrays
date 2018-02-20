@@ -19,15 +19,16 @@ myForEach(array, function(travelArray){
 // Ejercicio 2: simulando map();
 var saveArray = [];
 function mapArray(arreglo, callback) {
-    callback(arreglo);
-}
-
-function myMapArray(arreglo) {
     for (let index = 0; index < arreglo.length; index++) {
-        saveArray[index] = arreglo[index] + 5;        
+        saveArray[index] = arreglo[index];  
+        callback(arreglo);      
     }
     console.log(saveArray);
     return saveArray;
+}
+
+function myMapArray(arreglo) {
+    return arreglo + 5;
 }
 
 mapArray(array, myMapArray);
