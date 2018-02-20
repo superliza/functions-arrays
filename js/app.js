@@ -115,8 +115,8 @@ function miFunctionReduce(arreglo, reduce) {
 }
 
 function myFunctionReduce(arreglo) {
-    var x = totalSum+= arreglo;   
-    return x; 
+    var sumArray = totalSum += arreglo;   
+    return sumArray; 
 }
 
 miFunctionReduce(array, myFunctionReduce);
