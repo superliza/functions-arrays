@@ -40,13 +40,9 @@ function mapArray(arreglo, callback) {
     return saveArray;
 }
 
-function myMapArray(arreglo) {
-    return arreglo + 5;
-    
+function myMapArray(item) {
+    return item + 5;   
 }
-
-
-
 
 mapArray(array, myMapArray);
 
@@ -97,17 +93,30 @@ filterArray(array, myFilterArray);
 // }
 
 // Ejercicio 4: simulando reduce();
+// function miFunctionReduce(arreglo, reduce) {
+//     reduce(arreglo);
+// }
+
+// function myFunctionReduce(arreglo) {
+//     var totalSum = null;
+//     for (let index = 0; index < arreglo.length; index++) {
+//         totalSum += arreglo[index];        
+//     }
+//     console.log(totalSum);
+//     return totalSum;
+// }
+
+var totalSum = null;
 function miFunctionReduce(arreglo, reduce) {
-    reduce(arreglo);
+    for (let index = 0; index < arreglo.length; index++) {
+        var sum = reduce(arreglo[index]);                   
+    }        
+    console.log(sum); 
 }
 
 function myFunctionReduce(arreglo) {
-    var totalSum = null;
-    for (let index = 0; index < arreglo.length; index++) {
-        totalSum+= arreglo[index];        
-    }
-    console.log(totalSum);
-    return totalSum;
+    var x = totalSum+= arreglo;   
+    return x; 
 }
 
 miFunctionReduce(array, myFunctionReduce);
